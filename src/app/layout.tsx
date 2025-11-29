@@ -76,6 +76,9 @@ export const metadata: Metadata = {
     creator: "@codexmir", // Twitter username
     images: [SITE_INFO.ogImage],
   },
+  verification: {
+    google: "ziDZd_lijC0FXqCM7zawWTZ5IXuosqWYbzNhYhSXNfI",
+  },
 };
 
 export const viewport: Viewport = {
