@@ -300,14 +300,14 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
             </CommandItem>
 
             <CommandItem
-              onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
+              onSelect={() => handleOpenLink("/blog/samirsain-brand")}
             >
               <TriangleDashedIcon />
               Brand Guidelines
             </CommandItem>
 
             <CommandItem asChild>
-              <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
+              <a href="https://assets.samirsain.com/samirsain-brand.zip" download>
                 <DownloadIcon />
                 Download Brand Assets
               </a>

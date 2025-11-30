@@ -7,24 +7,24 @@ export const components: Registry["items"] = [
     description:
       "A theme switcher component for Next.js apps with next-themes and Tailwind CSS, supporting system, light, and dark modes.",
     title: "Theme Switcher",
-    author: "ncdai <dai@chanhdai.com>",
+    author: "samirsain <dai@samirsain.com>",
     dependencies: ["next-themes", "lucide-react", "motion"],
-    registryDependencies: ["@ncdai/utils"],
+    registryDependencies: ["@samirsain/utils"],
     files: [
       {
         path: "theme-switcher/theme-switcher.tsx",
         type: "registry:component",
       },
     ],
-    docs: "https://chanhdai.com/components/theme-switcher-component",
+    docs: "https://samirsain.com/components/theme-switcher-component",
   },
   {
     name: "flip-sentences",
     type: "registry:component",
     title: "Flip Sentences",
-    author: "ncdai <dai@chanhdai.com>",
+    author: "samirsain <dai@samirsain.com>",
     dependencies: ["motion"],
-    registryDependencies: ["@ncdai/utils"],
+    registryDependencies: ["@samirsain/utils"],
     files: [
       {
         path: "flip-sentences/flip-sentences.tsx",
@@ -38,16 +38,16 @@ export const components: Registry["items"] = [
     description:
       "Create a Xin chào and Hello writing effect inspired by Apple using Motion for React.",
     title: "Apple Hello Effect",
-    author: "ncdai <dai@chanhdai.com>",
+    author: "samirsain <dai@samirsain.com>",
     dependencies: ["motion"],
-    registryDependencies: ["@ncdai/utils"],
+    registryDependencies: ["@samirsain/utils"],
     files: [
       {
         path: "apple-hello-effect/apple-hello-effect.tsx",
         type: "registry:component",
       },
     ],
-    docs: "https://chanhdai.com/components/writing-effect-inspired-by-apple",
+    docs: "https://samirsain.com/components/writing-effect-inspired-by-apple",
   },
   {
     name: "wheel-picker",
@@ -56,7 +56,7 @@ export const components: Registry["items"] = [
       "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
     title: "Wheel Picker",
     author: "Samirsain <devxmir@gmail.com>",
-    dependencies: ["@samirsain/react-wheel-picker"],
+    dependencies: ["@ncdai/react-wheel-picker"],
     registryDependencies: ["@samirsain/utils"],
     files: [
       {
@@ -100,16 +100,16 @@ export const components: Registry["items"] = [
       '@import "tw-animate-css"': {},
       "@plugin @tailwindcss/typography": {},
     },
-    docs: "https://chanhdai.com/components/work-experience-component",
+    docs: "https://samirsain.com/components/work-experience-component",
   },
   {
     name: "shimmering-text",
     type: "registry:component",
     description: "Smooth shimmering text animation built with Motion.",
     title: "Shimmering Text",
-    author: "ncdai <dai@chanhdai.com>",
+    author: "samirsain <dai@samirsain.com>",
     dependencies: ["motion"],
-    registryDependencies: ["@ncdai/utils"],
+    registryDependencies: ["@samirsain/utils"],
     files: [
       {
         path: "shimmering-text/shimmering-text.tsx",
@@ -123,16 +123,16 @@ export const components: Registry["items"] = [
     description:
       "A sleek, interactive slider inspired by the classic iPhone OS 'slide to unlock' gesture.",
     title: "Slide to Unlock",
-    author: "ncdai <dai@chanhdai.com>",
+    author: "samirsain <dai@samirsain.com>",
     dependencies: ["motion"],
-    registryDependencies: ["@ncdai/utils", "@ncdai/shimmering-text"],
+    registryDependencies: ["@samirsain/utils", "@samirsain/shimmering-text"],
     files: [
       {
         path: "slide-to-unlock/slide-to-unlock.tsx",
         type: "registry:component",
       },
     ],
-    docs: "https://chanhdai.com/components/slide-to-unlock",
+    docs: "https://samirsain.com/components/slide-to-unlock",
   },
   {
     name: "testimonials-marquee",
@@ -140,15 +140,15 @@ export const components: Registry["items"] = [
     description:
       "A testimonials marquee component for showcasing user feedback in a scrolling format.",
     title: "Testimonials Marquee",
-    author: "ncdai <dai@chanhdai.com>",
-    registryDependencies: ["@ncdai/utils", "@kibo-ui/marquee"],
+    author: "samirsain <dai@samirsain.com>",
+    registryDependencies: ["@samirsain/utils", "@kibo-ui/marquee"],
     files: [
       {
         path: "testimonials-marquee/testimonials-marquee.tsx",
         type: "registry:component",
       },
     ],
-    docs: "https://chanhdai.com/components/testimonials-marquee",
+    docs: "https://samirsain.com/components/testimonials-marquee",
   },
   {
     name: "github-stars",
@@ -156,7 +156,7 @@ export const components: Registry["items"] = [
     description:
       "Display GitHub repository star count with formatted numbers and a tooltip showing the full count.",
     title: "GitHub Stars",
-    author: "ncdai <dai@chanhdai.com>",
+    author: "samirsain <dai@samirsain.com>",
     registryDependencies: ["button", "tooltip"],
     files: [
       {
