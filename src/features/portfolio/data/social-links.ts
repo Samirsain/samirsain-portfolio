@@ -8,19 +8,19 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: "https://instagram.com/codexmir",
   },
   {
-    icon: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+    icon: "/images/social/linkedin.png",
     title: "LinkedIn",
     description: "samirsain",
     href: "https://in.linkedin.com/in/samirsain",
   },
   {
-    icon: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
+    icon: "/images/social/github.png",
     title: "GitHub",
     description: "Samirsain",
     href: "https://github.com/Samirsain",
   },
   {
-    icon: "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg",
+    icon: "/images/social/x.png",
     title: "X (Twitter)",
     description: "@codexmir",
     href: "https://x.com/codexmir",
@@ -32,7 +32,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: "https://sam4you.vercel.app/",
   },
   {
-    icon: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
+    icon: "/images/social/whatsapp.jpg",
     title: "WhatsApp",
     description: "+91 9352410667",
     href: "https://wa.me/919352410667",

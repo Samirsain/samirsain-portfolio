@@ -1,7 +1,7 @@
 
 
 
-import { SITE_INFO, SOURCE_CODE_GITHUB_URL } from "@/config/site";
+import { SITE_INFO, SOURCE_CODE_GITHUB_URL, TWITTER_URL } from "@/config/site";
 
 
 
@@ -17,7 +17,7 @@ export function SiteFooter() {
           Built by{" "}
           <a
             className="link"
-            href="https://x.com/samirsain"
+            href={TWITTER_URL}
             target="_blank"
             rel="noopener"
           >
