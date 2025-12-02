@@ -26,7 +26,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: "https://x.com/codexmir",
   },
   {
-    icon: "https://www.samirsain.com/favicon.ico",
+    icon: "https://sam4you.vercel.app/favicon.ico",
     title: "Sam4You Agency",
     description: "Digital Solutions",
     href: "https://www.samirsain.com/",
