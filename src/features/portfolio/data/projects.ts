@@ -7,7 +7,7 @@ export const PROJECTS: Project[] = [
     period: {
       start: "01.2025",
     },
-    link: "https://www.samirsain.com/",
+    link: "https://sam4you.vercel.app/",
     skills: [
       "Agency Website",
       "Next.js 14",
@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
 - **Digital Growth**: SEO, automation services, and strategic marketing
 - Modern tech stack: Next.js 14, TypeScript, Tailwind CSS
 - Successfully serving global clients with 24/7 availability`,
-    logo: "https://www.samirsain.com/favicon.ico",
+    logo: "/image.png",
     isExpanded: true,
   },
   {

@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Static routes
-  const routes = ["", "/blog", "/components", "/about", "/projects", "/contact"].map(
+  const routes = ["", "/blog", "/components", "/about", "/projects", "/contact", "/favicon.ico", "/apple-touch-icon.png", "/icon.png"].map(
     (route) => ({
       url: `${baseUrl}${route}`,
       lastModified: new Date().toISOString(),

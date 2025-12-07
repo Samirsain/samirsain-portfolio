@@ -13,7 +13,7 @@ export const USER: User = {
     "Full Stack Developer",
     "Digital Solutions Expert",
   ],
-  address: "India",
+  address: "Gurgaon, India",
   phoneNumber: "KzkxOTM1MjQxMDY2Nw==", // +919352410667
   email: "ZGV2eG1pckBnbWFpbC5jb20=", // base64 encoded (devxmir@gmail.com)
   website: "https://samirsain.com",
@@ -22,7 +22,7 @@ export const USER: User = {
     {
       title: "Founder & Lead Developer",
       company: "Sam4You",
-      website: "https://samirsain.com",
+      website: "https://sam4you.vercel.app",
     },
   ],
   about: `

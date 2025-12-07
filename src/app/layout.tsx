@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     template: `%s`,
     default: "Samir Sain - Full Stack Developer",
   },
-  description: "Official website of Samir Sain - Full Stack Developer.",
+  description: "Official Portfolio of Samir Sain",
   keywords: [
     "Samir Sain",
     "Samir Sain Developer",
@@ -59,6 +59,17 @@ export const metadata: Metadata = {
     },
   ],
   creator: "Samir Sain",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     siteName: "Samir Sain",
     url: "/",

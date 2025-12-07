@@ -4,7 +4,7 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "sam4you",
     companyName: "Sam4You Agency",
-    companyLogo: "https://www.samirsain.com/favicon.ico",
+    companyLogo: "/image.png",
     positions: [
       {
         id: "founder",

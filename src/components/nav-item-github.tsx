@@ -11,17 +11,20 @@ async function getStargazerCount() {
           Authorization: `Bearer ${process.env.GITHUB_API_TOKEN}`,
           "X-GitHub-Api-Version": "2022-11-28",
         },
-        next: { revalidate: 86400 }, // Cache for 1 day (86400 seconds)
+        next: { revalidate: 0 }, // Disable cache for debugging
       }
     );
 
     if (!response.ok) {
+      console.error("GitHub API Error:", response.status, response.statusText);
       return 0;
     }
 
     const json = (await response.json()) as { stargazers_count?: number };
+    console.log("GitHub Stars Fetched:", json.stargazers_count);
     return Number(json?.stargazers_count) || 0;
-  } catch {
+  } catch (error) {
+    console.error("GitHub Fetch Error:", error);
     return 0;
   }
 }
