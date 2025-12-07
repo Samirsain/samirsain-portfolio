@@ -3,15 +3,21 @@ import { GitHubStars } from "@/registry/github-stars";
 
 async function getStargazerCount() {
   try {
+    const headers: HeadersInit = {
+      Accept: "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28",
+    };
+
+    // Only add Authorization header if token is available
+    if (process.env.GITHUB_API_TOKEN) {
+      headers.Authorization = `Bearer ${process.env.GITHUB_API_TOKEN}`;
+    }
+
     const response = await fetch(
       `https://api.github.com/repos/${SOURCE_CODE_GITHUB_REPO}`,
       {
-        headers: {
-          Accept: "application/vnd.github+json",
-          Authorization: `Bearer ${process.env.GITHUB_API_TOKEN}`,
-          "X-GitHub-Api-Version": "2022-11-28",
-        },
-        next: { revalidate: 86400 }, // Cache for 1 day (86400 seconds)
+        headers,
+        next: { revalidate: 3600 }, // Cache for 1 hour
       }
     );
 
