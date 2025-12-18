@@ -8,7 +8,7 @@ import { lib } from "./registry-lib";
 
 export const registry = {
   name: "ncdai",
-  homepage: "https://sam4you.vercel.app/components",
+  homepage: "https://zenviq.vercel.app/components",
   items: [
     ...lib,
     ...hook,

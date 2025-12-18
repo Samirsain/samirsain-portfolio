@@ -2,12 +2,12 @@ import type { Project } from "../types/projects";
 
 export const PROJECTS: Project[] = [
   {
-    id: "sam4you",
-    title: "Sam4You - Digital Agency",
+    id: "zenviq",
+    title: "Zenviq - Digital Agency",
     period: {
       start: "01.2025",
     },
-    link: "https://sam4you.vercel.app/",
+    link: "https://zenviq.vercel.app/",
     skills: [
       "Agency Website",
       "Next.js 14",
@@ -19,14 +19,14 @@ export const PROJECTS: Project[] = [
       "SEO",
       "Vercel",
     ],
-    description: `Sam4You is a comprehensive digital agency providing innovative solutions for business growth.
+    description: `Zenviq is a comprehensive digital agency providing innovative solutions for business growth.
 - **Services**: WordPress Development (8+ years), Next.js & Modern Apps, AI Integration, E-commerce Solutions
 - **AI Tools**: Custom chatbots, GitaGPT integration, and intelligent features
 - **Free Tools**: AI Content Generator, Pinterest Downloader, EMI Calculator, GST Calculator, and more
 - **Digital Growth**: SEO, automation services, and strategic marketing
 - Modern tech stack: Next.js 14, TypeScript, Tailwind CSS
 - Successfully serving global clients with 24/7 availability`,
-    logo: "https://sam4you.vercel.app/favicon.ico",
+    logo: "https://zenviq.vercel.app/favicon.ico",
     isExpanded: true,
   },
   {

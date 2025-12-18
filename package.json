@@ -2,7 +2,7 @@
   "name": "samirsain.com",
   "version": "0.1.0",
   "description": "A minimal, pixel-perfect dev portfolio, component registry, and blog for Samirsain.",
-  "homepage": "https://sam4you.vercel.app",
+  "homepage": "https://zenviq.vercel.app",
   "license": "MIT",
   "author": {
     "name": "Samirsain",
@@ -55,14 +55,14 @@
     "libphonenumber-js": "^1.12.4",
     "lucide-react": "^0.544.0",
     "motion": "^12.18.1",
-    "next": "16.0.7",
+    "next": "16.0.10",
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.4.6",
     "nuqs": "^2.8.0",
     "posthog-js": "^1.297.2",
     "radix-ui": "^1.4.3",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-fast-marquee": "^1.6.5",
     "react-hook-form": "^7.54.2",
     "react-hotkeys-hook": "^5.2.1",
@@ -88,7 +88,7 @@
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "eslint": "^9.22.0",
-    "eslint-config-next": "16.0.4",
+    "eslint-config-next": "16.0.10",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "gray-matter": "^4.0.3",
@@ -124,5 +124,9 @@
     "node": "22.x",
     "pnpm": ">=9"
   },
-  "packageManager": "pnpm@10.23.0"
+  "packageManager": "pnpm@10.23.0",
+  "overrides": {
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3"
+  }
 }
