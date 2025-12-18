@@ -64,7 +64,7 @@ export const components: Registry["items"] = [
         type: "registry:component",
       },
     ],
-    docs: "https://sam4you.vercel.app/components/react-wheel-picker",
+    docs: "https://zenviq.vercel.app/components/react-wheel-picker",
   },
   {
     name: "work-experience",

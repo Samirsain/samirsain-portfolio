@@ -16,13 +16,13 @@ export const USER: User = {
   address: "India",
   phoneNumber: "KzkxOTM1MjQxMDY2Nw==", // +919352410667
   email: "ZGV2eG1pckBnbWFpbC5jb20=", // base64 encoded (devxmir@gmail.com)
-  website: "https://sam4you.vercel.app",
+  website: "https://zenviq.vercel.app",
   jobTitle: "Full Stack Developer",
   jobs: [
     {
       title: "Founder & Lead Developer",
-      company: "Sam4You",
-      website: "https://sam4you.vercel.app",
+      company: "Zenviq",
+      website: "https://zenviq.vercel.app",
     },
   ],
   about: `
@@ -37,13 +37,13 @@ With a strong mindset, consistent learning, and love for coding, I’m committed
 `,
   avatar: "https://github.com/samirsain.png",
   ogImage:
-    "https://sam4you.vercel.app/og-image.png",
+    "https://zenviq.vercel.app/og-image.png",
   namePronunciationUrl: "",
   timeZone: "Asia/Kolkata",
   keywords: [
     "samirsain",
     "samir sain",
-    "sam4you",
+    "zenviq",
     "full stack developer",
     "wordpress developer",
     "nextjs developer",

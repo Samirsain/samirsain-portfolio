@@ -2,9 +2,9 @@ import type { Experience } from "../types/experiences";
 
 export const EXPERIENCES: Experience[] = [
   {
-    id: "sam4you",
-    companyName: "Sam4You Agency",
-    companyLogo: "https://sam4you.vercel.app/favicon.ico",
+    id: "zenviq",
+    companyName: "Zenviq Agency",
+    companyLogo: "https://zenviq.vercel.app/favicon.ico",
     positions: [
       {
         id: "founder",
