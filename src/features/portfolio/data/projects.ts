@@ -53,4 +53,30 @@ export const PROJECTS: Project[] = [
     logo: "/images/nurox-logo.png",
     isExpanded: true,
   },
+  {
+    id: "credify",
+    title: "Credify - Fintech Platform",
+    period: {
+      start: "12.2024",
+    },
+    link: "https://credify-fintech.vercel.app/",
+    skills: [
+      "Fintech",
+      "Next.js",
+      "TypeScript",
+      "AI Integration",
+      "Finance Dashboard",
+      "Responsive Design",
+      "Modern UI/UX",
+      "Vercel",
+    ],
+    description: `Credify is a modern fintech platform for effortless finance management and smarter financial future.
+- **Features**: Track expenses, optimize budgets, and grow wealth with AI-driven insights
+- **Security**: Secure and seamless finance solutions in one platform
+- **Card Management**: Virtual and physical card management with real-time balance tracking
+- Modern, premium UI with dark theme and smooth animations
+- Built with Next.js, TypeScript, and deployed on Vercel`,
+    logo: "https://credify-fintech.vercel.app/favicon.ico",
+    isExpanded: true,
+  },
 ];
