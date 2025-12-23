@@ -20,8 +20,9 @@ import { getPostsByCategory } from "@/features/blog/data/posts";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Components",
-  description: "A collection of reusable components.",
+  title: "Components – Samir Sain",
+  description:
+    "A collection of copy-paste UI components built with Tailwind CSS and Radix UI.",
 };
 
 const componentsJSON = `\`\`\`json title="components.json" showLineNumbers {3}

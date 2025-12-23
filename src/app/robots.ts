@@ -4,11 +4,11 @@ import { SITE_INFO } from "@/config/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: "*",
-      },
-    ],
+    rules: {
+      userAgent: "*",
+      allow: "/",
+      disallow: ["/_next/", "/api/", "/favicon.ico"],
+    },
     sitemap: `${SITE_INFO.url}/sitemap.xml`,
   };
 }

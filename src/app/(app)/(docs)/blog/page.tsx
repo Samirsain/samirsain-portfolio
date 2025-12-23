@@ -7,8 +7,8 @@ import { PostSearchInput } from "@/features/blog/components/post-search-input";
 import { getAllPosts } from "@/features/blog/data/posts";
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "A collection of articles on development, design, and ideas.",
+  title: "Blog – Samir Sain",
+  description: "In-depth guides on React, Next.js, and modern web development.",
 };
 
 export default function Page() {
