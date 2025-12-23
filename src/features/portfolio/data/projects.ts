@@ -105,7 +105,7 @@ export const PROJECTS: Project[] = [
 - **Custom Design**: Hand-crafted UI without using generic templates, suitable for real-world dashboard applications
 - **Tech Stack**: Built with React/Next.js, Tailwind CSS, and Recharts for data visualization
 - **Role**: UI design, component architecture, layout structure, and overall visual system`,
-    logo: "https://norvia-dashboard.vercel.app/favicon.ico",
+    logo: "/images/norvia-logo.png",
     isExpanded: true,
   },
 ];
