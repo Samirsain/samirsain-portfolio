@@ -79,4 +79,33 @@ export const PROJECTS: Project[] = [
     logo: "https://credify-fintech.vercel.app/favicon.ico",
     isExpanded: true,
   },
+  {
+    id: "norvia",
+    title: "NORVIA Dashboard",
+    period: {
+      start: "12.2024",
+    },
+    link: "https://norvia-dashboard.vercel.app/",
+    skills: [
+      "Dashboard UI",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Recharts",
+      "UI/UX Design",
+      "Component Architecture",
+      "Responsive Design",
+      "Vercel",
+    ],
+    description: `NORVIA Dashboard is a premium web dashboard interface designed with a focus on clarity, balance, and long-term usability.
+- **Premium Design**: Classic and minimalist UI with a clean, timeless and professional aesthetic
+- **Features**: Collapsible sidebar navigation, modular card-based layout, analytics charts and data tables
+- **User Management**: User management and settings sections with intuitive interface
+- **Responsive**: Desktop-first design with clean and reusable component structure
+- **Custom Design**: Hand-crafted UI without using generic templates, suitable for real-world dashboard applications
+- **Tech Stack**: Built with React/Next.js, Tailwind CSS, and Recharts for data visualization
+- **Role**: UI design, component architecture, layout structure, and overall visual system`,
+    logo: "https://norvia-dashboard.vercel.app/favicon.ico",
+    isExpanded: true,
+  },
 ];
