@@ -3,7 +3,7 @@ import type { NavItem } from "@/types/nav";
 
 export const SITE_INFO = {
   name: USER.displayName,
-  url: process.env.APP_URL || "https://samirsain.com",
+  url: "https://samirsain.com",
   ogImage: USER.ogImage,
   description: USER.bio,
   keywords: USER.keywords,
@@ -27,7 +27,8 @@ export const MAIN_NAV: NavItem[] = [
 
 export const GITHUB_USERNAME = "Samirsain";
 export const SOURCE_CODE_GITHUB_REPO = "Samirsain/saimirsain-portfolio";
-export const SOURCE_CODE_GITHUB_URL = "https://github.com/Samirsain/saimirsain-portfolio";
+export const SOURCE_CODE_GITHUB_URL =
+  "https://github.com/Samirsain/saimirsain-portfolio";
 export const TWITTER_URL = "https://x.com/codexmir";
 
 export const SPONSORSHIP_URL = "https://github.com/sponsors/Samirsain";

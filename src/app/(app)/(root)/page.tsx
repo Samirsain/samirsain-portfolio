@@ -67,7 +67,31 @@ function getPageJsonLd(): WithContext<PageSchema> {
       name: USER.displayName,
       identifier: USER.username,
       image: USER.avatar,
+      jobTitle: USER.jobTitle,
+      url: "https://samirsain.com",
+      sameAs: [
+        "https://github.com/Samirsain",
+        "https://x.com/codexmir",
+        "https://linkedin.com/in/samirsain",
+      ],
+      description: USER.bio,
     },
+    hasPart: [
+      {
+        "@type": "SiteNavigationElement",
+        name: "Blog",
+        url: "https://samirsain.com/blog",
+        description:
+          "In-depth guides on React, Next.js, and modern web development.",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        name: "Components",
+        url: "https://samirsain.com/components",
+        description:
+          "A collection of copy-paste UI components built with Tailwind CSS.",
+      },
+    ],
   };
 }
 

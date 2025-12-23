@@ -5,7 +5,6 @@ import Script from "next/script";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import type { WebSite, WithContext } from "schema-dts";
 
-
 import { Providers } from "@/components/providers";
 import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
 import { USER } from "@/features/portfolio/data/user";
@@ -37,9 +36,9 @@ const darkModeScript = String.raw`
 `;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_INFO.url),
+  metadataBase: new URL("https://samirsain.com"),
   alternates: {
-    canonical: "/",
+    canonical: "https://samirsain.com",
   },
   title: {
     template: `%s – ${SITE_INFO.name}`,
@@ -47,6 +46,10 @@ export const metadata: Metadata = {
   },
   description: SITE_INFO.description,
   keywords: SITE_INFO.keywords,
+  robots: {
+    index: true,
+    follow: true,
+  },
   authors: [
     {
       name: "Samirsain",
@@ -78,6 +81,13 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "ziDZd_lijC0FXqCM7zawWTZ5IXuosqWYbzNhYhSXNfI",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -119,9 +129,7 @@ export default function RootLayout({
 
       <body>
         <Providers>
-          <NuqsAdapter>
-            {children}
-          </NuqsAdapter>
+          <NuqsAdapter>{children}</NuqsAdapter>
         </Providers>
       </body>
     </html>
