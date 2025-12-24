@@ -76,6 +76,18 @@ function getStructuredData() {
     },
   };
 
+  // Google Sitelinks Searchbox requires "query-input" which is not in schema-dts
+  interface GoogleSearchAction {
+    "@type": "SearchAction";
+    target:
+      | string
+      | {
+          "@type": "EntryPoint";
+          urlTemplate: string;
+        };
+    "query-input": string;
+  }
+
   const websiteSchema: WithContext<WebSite> = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -95,7 +107,7 @@ function getStructuredData() {
         urlTemplate: `${SITE_INFO.url}/?s={search_term_string}`,
       },
       "query-input": "required name=search_term_string",
-    },
+    } as unknown as GoogleSearchAction,
   };
 
   return [personSchema, organizationSchema, websiteSchema];
