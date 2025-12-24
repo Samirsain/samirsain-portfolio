@@ -3,7 +3,7 @@ import type { User } from "@/features/portfolio/types/user";
 export const USER: User = {
   firstName: "Samir",
   lastName: "Sain",
-  displayName: "Samirsain",
+  displayName: "Samir Sain",
   username: "samirsain",
   gender: "male",
   pronouns: "he/him",
@@ -36,8 +36,7 @@ My goal is simple:
 With a strong mindset, consistent learning, and love for coding, I’m committed to creating meaningful digital experiences that leave an impact.
 `,
   avatar: "https://github.com/samirsain.png",
-  ogImage:
-    "https://zenviq.vercel.app/og-image.png",
+  ogImage: "https://zenviq.vercel.app/og-image.png",
   namePronunciationUrl: "",
   timeZone: "Asia/Kolkata",
   keywords: [
