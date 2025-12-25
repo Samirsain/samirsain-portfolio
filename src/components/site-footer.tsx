@@ -1,9 +1,4 @@
-
-
-
 import { SITE_INFO, SOURCE_CODE_GITHUB_URL, TWITTER_URL } from "@/config/site";
-
-
 
 export function SiteFooter() {
   return (
@@ -15,13 +10,8 @@ export function SiteFooter() {
 
         <p className="mb-4 px-4 text-center font-mono text-sm text-balance text-muted-foreground">
           Built by{" "}
-          <a
-            className="link"
-            href={TWITTER_URL}
-            target="_blank"
-            rel="noopener"
-          >
-            Samirsain
+          <a className="link" href={TWITTER_URL} target="_blank" rel="noopener">
+            Samir Sain
           </a>
           . The source code is available on{" "}
           <a
@@ -34,8 +24,6 @@ export function SiteFooter() {
           </a>
           .
         </p>
-
-
       </div>
       <div className="pb-[env(safe-area-inset-bottom,0px)]">
         <div className="flex h-2" />
@@ -43,5 +31,3 @@ export function SiteFooter() {
     </footer>
   );
 }
-
-

@@ -55,7 +55,7 @@ export const components: Registry["items"] = [
     description:
       "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
     title: "Wheel Picker",
-    author: "Samirsain <devxmir@gmail.com>",
+    author: "Samir Sain <devxmir@gmail.com>",
     dependencies: ["@samirsain/react-wheel-picker"],
     registryDependencies: ["@samirsain/utils"],
     files: [
@@ -72,7 +72,7 @@ export const components: Registry["items"] = [
     description:
       "Displays a list of work experiences with role details and durations.",
     title: "Work Experience",
-    author: "Samirsain <devxmir@gmail.com>",
+    author: "Samir Sain <devxmir@gmail.com>",
     dependencies: ["react-markdown", "lucide-react"],
     devDependencies: ["@tailwindcss/typography", "tw-animate-css"],
     registryDependencies: ["@samirsain/utils", "collapsible", "separator"],
