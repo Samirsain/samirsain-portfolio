@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import type { BreadcrumbList, WithContext } from "schema-dts";
 
+import { SITE_INFO } from "@/config/site";
 import { PostList } from "@/features/blog/components/post-list";
 import { PostListWithSearch } from "@/features/blog/components/post-list-with-search";
 import { PostSearchInput } from "@/features/blog/components/post-search-input";
@@ -11,11 +13,38 @@ export const metadata: Metadata = {
   description: "In-depth guides on React, Next.js, and modern web development.",
 };
 
+function getPageJsonLd(): WithContext<BreadcrumbList> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_INFO.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${SITE_INFO.url}/blog`,
+      },
+    ],
+  };
+}
+
 export default function Page() {
   const allPosts = getAllPosts();
 
   return (
     <div className="min-h-svh">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getPageJsonLd()).replace(/</g, "\\u003c"),
+        }}
+      />
       <div className="screen-line-after px-4">
         <h1 className="text-3xl font-semibold">Blog</h1>
       </div>

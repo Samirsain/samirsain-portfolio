@@ -1,19 +1,47 @@
 import type { Metadata } from "next";
+import type { BreadcrumbList, WithContext } from "schema-dts";
 
 import { Button } from "@/components/ui/button";
-import { SPONSORSHIP_URL } from "@/config/site";
+import { SITE_INFO, SPONSORSHIP_URL } from "@/config/site";
 import sponsors from "@/features/sponsors/sponsors.json";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Sponsors",
+  title: "Sponsors – Samir Sain",
   description:
     "Grateful for the support that helps me grow and maintain high-quality projects.",
 };
 
+function getPageJsonLd(): WithContext<BreadcrumbList> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_INFO.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Sponsors",
+        item: `${SITE_INFO.url}/sponsors`,
+      },
+    ],
+  };
+}
+
 export default function Page() {
   return (
     <div className="min-h-svh">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getPageJsonLd()).replace(/</g, "\\u003c"),
+        }}
+      />
       <div className="screen-line-after px-4">
         <h1 className="text-3xl font-semibold">Sponsors</h1>
       </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import type { BreadcrumbList, WithContext } from "schema-dts";
 
 import { ComponentIcon } from "@/components/icons";
 import { MDX } from "@/components/mdx";
@@ -16,6 +17,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { registryConfig } from "@/config/registry";
+import { SITE_INFO } from "@/config/site";
 import { getPostsByCategory } from "@/features/blog/data/posts";
 import { cn } from "@/lib/utils";
 
@@ -24,6 +26,27 @@ export const metadata: Metadata = {
   description:
     "A collection of copy-paste UI components built with Tailwind CSS and Radix UI.",
 };
+
+function getPageJsonLd(): WithContext<BreadcrumbList> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_INFO.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Components",
+        item: `${SITE_INFO.url}/components`,
+      },
+    ],
+  };
+}
 
 const componentsJSON = `\`\`\`json title="components.json" showLineNumbers {3}
 {
@@ -38,6 +61,12 @@ export default function Page() {
 
   return (
     <div className="min-h-svh">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getPageJsonLd()).replace(/</g, "\\u003c"),
+        }}
+      />
       <div className="screen-line-after px-4">
         <h1 className="text-3xl font-semibold">Components</h1>
       </div>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { SITE_INFO, SOURCE_CODE_GITHUB_URL, TWITTER_URL } from "@/config/site";
 
 export function SiteFooter() {
@@ -7,6 +9,33 @@ export function SiteFooter() {
         <p className="mb-1 px-4 text-center font-mono text-sm text-balance text-muted-foreground">
           Inspired by tailwindcss.com & ui.shadcn.com
         </p>
+
+        <nav className="mb-4 flex flex-wrap justify-center gap-x-6 gap-y-2 px-4 font-mono text-sm">
+          <Link
+            href="/"
+            className="link text-muted-foreground hover:text-foreground"
+          >
+            Home
+          </Link>
+          <Link
+            href="/blog"
+            className="link text-muted-foreground hover:text-foreground"
+          >
+            Blog
+          </Link>
+          <Link
+            href="/components"
+            className="link text-muted-foreground hover:text-foreground"
+          >
+            Components
+          </Link>
+          <Link
+            href="/sponsors"
+            className="link text-muted-foreground hover:text-foreground"
+          >
+            Sponsors
+          </Link>
+        </nav>
 
         <p className="mb-4 px-4 text-center font-mono text-sm text-balance text-muted-foreground">
           Built by{" "}

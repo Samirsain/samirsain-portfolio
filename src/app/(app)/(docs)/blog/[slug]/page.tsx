@@ -3,7 +3,11 @@ import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import type { BlogPosting as PageSchema, WithContext } from "schema-dts";
+import type {
+  BlogPosting as PageSchema,
+  BreadcrumbList,
+  WithContext,
+} from "schema-dts";
 
 import { InlineTOC } from "@/components/inline-toc";
 import { MDX } from "@/components/mdx";
@@ -77,6 +81,37 @@ export async function generateMetadata({
   };
 }
 
+function getBreadcrumbJsonLd(post: Post): WithContext<BreadcrumbList> {
+  const isComponent = post.metadata.category === "components";
+  const sectionName = isComponent ? "Components" : "Blog";
+  const sectionPath = isComponent ? "/components" : "/blog";
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_INFO.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: sectionName,
+        item: `${SITE_INFO.url}${sectionPath}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.metadata.title,
+        item: `${SITE_INFO.url}${getPostUrl(post)}`,
+      },
+    ],
+  };
+}
+
 function getPageJsonLd(post: Post): WithContext<PageSchema> {
   return {
     "@context": "https://schema.org",
@@ -123,6 +158,15 @@ export default async function Page({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(getPageJsonLd(post)).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getBreadcrumbJsonLd(post)).replace(
+            /</g,
+            "\\u003c"
+          ),
         }}
       />
 

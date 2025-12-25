@@ -104,7 +104,7 @@ function getStructuredData() {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: `${SITE_INFO.url}/?s={search_term_string}`,
+        urlTemplate: `${SITE_INFO.url}/blog?q={search_term_string}`,
       },
       "query-input": "required name=search_term_string",
     } as unknown as GoogleSearchAction,

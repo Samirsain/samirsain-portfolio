@@ -23,6 +23,14 @@ export const MAIN_NAV: NavItem[] = [
     title: "Blog",
     href: "/blog",
   },
+  {
+    title: "Components",
+    href: "/components",
+  },
+  {
+    title: "Sponsors",
+    href: "/sponsors",
+  },
 ];
 
 export const GITHUB_USERNAME = "Samirsain";
