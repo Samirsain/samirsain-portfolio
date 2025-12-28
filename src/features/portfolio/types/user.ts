@@ -32,6 +32,13 @@ export type User = {
   about: string;
   /** Public URL to avatar image */
   avatar: string;
+  /** Profile photo details for Schema.org Person ImageObject */
+  profilePhoto: {
+    url: string;
+    width: number;
+    height: number;
+    caption: string;
+  };
   /** Open Graph image URL for social sharing */
   ogImage: string;
   /** Audio URL for name pronunciation */

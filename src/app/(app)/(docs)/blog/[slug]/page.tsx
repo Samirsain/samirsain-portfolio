@@ -126,9 +126,15 @@ function getPageJsonLd(post: Post): WithContext<PageSchema> {
     dateModified: new Date(post.metadata.updatedAt).toISOString(),
     author: {
       "@type": "Person",
+      "@id": "https://samirsain.com#person",
       name: USER.displayName,
       identifier: USER.username,
-      image: USER.avatar,
+      image: {
+        "@type": "ImageObject",
+        url: USER.profilePhoto.url,
+        width: String(USER.profilePhoto.width),
+        height: String(USER.profilePhoto.height),
+      },
     },
   };
 }

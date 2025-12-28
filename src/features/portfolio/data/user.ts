@@ -35,8 +35,14 @@ My goal is simple:
 
 With a strong mindset, consistent learning, and love for coding, I’m committed to creating meaningful digital experiences that leave an impact.
 `,
-  avatar: "https://github.com/samirsain.png",
-  ogImage: "https://zenviq.vercel.app/og-image.png",
+  avatar: "https://samirsain.com/images/samirsain-avatar.png",
+  profilePhoto: {
+    url: "https://samirsain.com/images/samirsain-avatar.png",
+    width: 400,
+    height: 400,
+    caption: "Samir Sain - Full Stack Developer",
+  },
+  ogImage: "https://samirsain.com/og-image.png",
   namePronunciationUrl: "",
   timeZone: "Asia/Kolkata",
   keywords: [

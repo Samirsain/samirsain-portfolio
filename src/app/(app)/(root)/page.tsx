@@ -64,9 +64,18 @@ function getPageJsonLd(): WithContext<PageSchema> {
     dateModified: new Date().toISOString(),
     mainEntity: {
       "@type": "Person",
+      "@id": "https://samirsain.com#person",
       name: USER.displayName,
       identifier: USER.username,
-      image: USER.avatar,
+      // Enhanced ImageObject for entity recognition
+      image: {
+        "@type": "ImageObject",
+        url: "https://samirsain.com/images/samirsain-avatar.png",
+        contentUrl: "https://samirsain.com/images/samirsain-avatar.png",
+        width: "400",
+        height: "400",
+        caption: "Samir Sain - Full Stack Developer",
+      },
       jobTitle: USER.jobTitle,
       url: "https://samirsain.com",
       sameAs: [

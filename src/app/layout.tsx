@@ -19,10 +19,24 @@ function getStructuredData() {
     givenName: USER.firstName,
     familyName: USER.lastName,
     url: SITE_INFO.url,
-    image: USER.avatar,
+    // Enhanced ImageObject for Google entity recognition
+    image: {
+      "@type": "ImageObject",
+      "@id": `${SITE_INFO.url}#personImage`,
+      url: USER.profilePhoto.url,
+      contentUrl: USER.profilePhoto.url,
+      caption: USER.profilePhoto.caption,
+      width: String(USER.profilePhoto.width),
+      height: String(USER.profilePhoto.height),
+    },
     jobTitle: USER.jobTitle,
     description: USER.bio,
     gender: USER.gender,
+    // MainEntityOfPage establishes this page is ABOUT this person
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": SITE_INFO.url,
+    },
     knowsAbout: [
       "Full Stack Development",
       "Next.js",
@@ -35,6 +49,7 @@ function getStructuredData() {
     sameAs: [
       "https://github.com/samirsain",
       "https://x.com/codexmir",
+      "https://linkedin.com/in/samirsain",
       SITE_INFO.url,
     ],
     address: {
@@ -190,11 +205,19 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@codexmir",
+    creator: "@codexmir",
     title: `${USER.displayName} | ${USER.jobTitle}`,
     description:
       "Full Stack Developer & Founder of Zenviq Digital Agency. Building modern web solutions with Next.js & React.",
-    creator: "@codexmir",
-    images: [SITE_INFO.ogImage],
+    images: [
+      {
+        url: SITE_INFO.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${USER.displayName} - Full Stack Developer`,
+      },
+    ],
   },
   verification: {
     google: "ziDZd_lijC0FXqCM7zawWTZ5IXuosqWYbzNhYhSXNfI",
