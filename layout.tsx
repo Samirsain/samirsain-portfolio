@@ -107,12 +107,8 @@ function getStructuredData() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${SITE_INFO.url}#website`,
-    name: USER.displayName,
-    alternateName: [
-      USER.username,
-      "Zenviq",
-      `${USER.displayName} | ${USER.jobTitle}`,
-    ],
+    name: `${USER.displayName} | ${USER.jobTitle}`,
+    alternateName: [USER.username, "Zenviq"],
     url: SITE_INFO.url,
     description: SITE_INFO.description,
     publisher: {
@@ -135,6 +131,12 @@ function getStructuredData() {
 // Thanks @shadcn-ui, @tailwindcss
 const darkModeScript = String.raw`
   try {
+    if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '${META_THEME_COLORS.dark}')
+    }
+  } catch (_) {}
+
+  try {
     if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
       document.documentElement.classList.add('os-macos')
     }
@@ -143,7 +145,6 @@ const darkModeScript = String.raw`
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://samirsain.com"),
-  applicationName: USER.displayName,
   alternates: {
     canonical: "https://samirsain.com",
   },
