@@ -43,13 +43,13 @@ export default function Page() {
         <TeckStack />
         <Separator />
 
-        <Blog />
+        <Projects />
         <Separator />
 
         <Experiences />
         <Separator />
 
-        <Projects />
+        <Blog />
         <Separator />
       </div>
     </>
