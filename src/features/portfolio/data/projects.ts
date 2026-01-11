@@ -2,6 +2,33 @@ import type { Project } from "../types/projects";
 
 export const PROJECTS: Project[] = [
   {
+    id: "zennova-ai",
+    title: "Zennova AI - Visual Generation",
+    period: {
+      start: "01.2026",
+    },
+    link: "https://zennova-ai.vercel.app/",
+    skills: [
+      "AI Visuals",
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind CSS",
+      "Image Generation",
+      "Text-to-Video",
+      "AI Music",
+      "Vercel",
+      "Premium UI",
+    ],
+    description: `Zennova AI is a premium visual generation platform that turns ideas into stunning content.
+- **Visuals**: Create Portraits, Art, and Digital Assets in seconds with advanced AI models
+- **Multimedia**: Integrated Text-to-Video and AI Music generation features
+- **Design**: Modern, premium interface (Mint Green aesthetic) with fluid animations and responsive layout
+- **Performance**: High-speed AI inference and optimized asset delivery
+- **Tech Stack**: Next.js, React, Tailwind CSS, and bleeding-edge AI APIs`,
+    logo: "https://zennova-ai.vercel.app/favicon.ico",
+    isExpanded: true,
+  },
+  {
     id: "zenviq",
     title: "Zenviq - Digital Agency",
     period: {

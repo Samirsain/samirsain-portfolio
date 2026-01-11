@@ -12,6 +12,9 @@ export function Projects() {
           Projects
           <PanelTitleSup>({PROJECTS.length})</PanelTitleSup>
         </PanelTitle>
+        <p className="mt-1 pb-4 text-sm text-balance text-muted-foreground">
+          A collection of premium digital solutions and AI-powered applications.
+        </p>
       </PanelHeader>
 
       <CollapsibleList
