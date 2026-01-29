@@ -10,6 +10,39 @@ import { cn } from "@/lib/utils";
 import { TECH_STACK } from "../data/tech-stack";
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel";
 
+// Map tech keys to devicon names
+const DEVICON_MAP: Record<string, string> = {
+  typescript: "typescript",
+  js: "javascript",
+  python: "python",
+  php: "php",
+  java: "java",
+  nodejs: "nodejs",
+  bun: "bun",
+  react: "react",
+  nextjs2: "nextjs",
+  tailwindcss: "tailwindcss",
+  "shadcn-ui": "react", // No shadcn icon, use react
+  radixui: "react", // No radix icon, use react
+  motion: "framermotion",
+  tanstack: "react", // No tanstack icon, use react
+  "mobx-state-tree": "mobx",
+  redux: "redux",
+  antd: "antdesign",
+  "react-router": "reactrouter",
+  "react-navigation": "react",
+  loopback: "nodejs",
+  laravel: "laravel",
+  git: "git",
+  docker: "docker",
+  mysql: "mysql",
+  mongodb: "mongodb",
+  redis: "redis",
+  figma: "figma",
+  ps: "photoshop",
+  chatgpt: "openai",
+};
+
 export function TeckStack() {
   return (
     <Panel id="stack">
@@ -26,6 +59,9 @@ export function TeckStack() {
       >
         <ul className="flex flex-wrap gap-4 select-none">
           {TECH_STACK.map((tech) => {
+            const deviconName = DEVICON_MAP[tech.key] || tech.key;
+            const iconUrl = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${deviconName}/${deviconName}-original.svg`;
+
             return (
               <li key={tech.key} className="flex">
                 <Tooltip>
@@ -36,34 +72,14 @@ export function TeckStack() {
                       rel="noopener noreferrer"
                       aria-label={tech.title}
                     >
-                      {tech.theme ? (
-                        <>
-                          <Image
-                            src={`https://assets.samirsain.com/images/tech-stack-icons/${tech.key}-light.svg`}
-                            alt={`${tech.title} light icon`}
-                            width={32}
-                            height={32}
-                            className="hidden [html.light_&]:block"
-                            unoptimized
-                          />
-                          <Image
-                            src={`https://assets.samirsain.com/images/tech-stack-icons/${tech.key}-dark.svg`}
-                            alt={`${tech.title} dark icon`}
-                            width={32}
-                            height={32}
-                            className="hidden [html.dark_&]:block"
-                            unoptimized
-                          />
-                        </>
-                      ) : (
-                        <Image
-                          src={`https://assets.samirsain.com/images/tech-stack-icons/${tech.key}.svg`}
-                          alt={`${tech.title} icon`}
-                          width={32}
-                          height={32}
-                          unoptimized
-                        />
-                      )}
+                      <Image
+                        src={iconUrl}
+                        alt={`${tech.title} icon`}
+                        width={32}
+                        height={32}
+                        unoptimized
+                        className="transition-transform hover:scale-110"
+                      />
                       <span className="sr-only">{tech.title}</span>
                     </a>
                   </TooltipTrigger>

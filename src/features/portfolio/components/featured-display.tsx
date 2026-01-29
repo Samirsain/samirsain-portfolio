@@ -56,9 +56,6 @@ const featuredCards = [
 export function FeaturedDisplay() {
   return (
     <Panel>
-      <PanelHeader>
-        <PanelTitle>Featured</PanelTitle>
-      </PanelHeader>
       <div className="flex flex-col items-center justify-center px-4 py-24 sm:px-0">
         <DisplayCards cards={featuredCards} />
       </div>
