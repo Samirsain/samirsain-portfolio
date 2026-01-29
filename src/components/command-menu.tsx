@@ -38,9 +38,9 @@ import { useSound } from "@/hooks/use-sound";
 import { trackEvent } from "@/lib/events";
 import { copyText } from "@/utils/copy";
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark";
-import { getWordmarkSVG } from "./chanhdai-wordmark";
 import { ComponentIcon, Icons } from "./icons";
+import { getMarkSVG, SamirsainMark } from "./samirsain-mark";
+import { getWordmarkSVG } from "./samirsain-wordmark";
 import { Button } from "./ui/button";
 import { Kbd, KbdGroup } from "./ui/kbd";
 import { Separator } from "./ui/separator";
@@ -59,7 +59,7 @@ const MENU_LINKS: CommandLinkItem[] = [
   {
     title: "Portfolio",
     href: "/",
-    icon: ChanhDaiMark,
+    icon: SamirsainMark,
   },
   {
     title: "Blog",
@@ -283,7 +283,7 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
                 );
               }}
             >
-              <ChanhDaiMark />
+              <SamirsainMark className="size-4" />
               Copy Mark as SVG
             </CommandItem>
 
@@ -300,14 +300,17 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
             </CommandItem>
 
             <CommandItem
-              onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
+              onSelect={() => handleOpenLink("/blog/samirsain-brand")}
             >
               <TriangleDashedIcon />
               Brand Guidelines
             </CommandItem>
 
             <CommandItem asChild>
-              <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
+              <a
+                href="/samir-sain-brand.zip"
+                download="Samir-Sain-Brand-Assets.zip"
+              >
                 <DownloadIcon />
                 Download Brand Assets
               </a>
@@ -472,7 +475,7 @@ function CommandMenuFooter() {
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 border-t bg-zinc-100/30 px-4 text-xs font-medium dark:bg-zinc-800/30">
-        <ChanhDaiMark className="size-6 text-muted-foreground" aria-hidden />
+        <SamirsainMark className="size-6 text-muted-foreground" aria-hidden />
 
         <div className="flex shrink-0 items-center gap-2">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>
@@ -496,8 +499,8 @@ function postToCommandLinkItem(post: Post): CommandLinkItem {
 
   const IconComponent = isComponent
     ? (props: LucideProps) => (
-      <ComponentIcon {...props} variant={post.metadata.icon} />
-    )
+        <ComponentIcon {...props} variant={post.metadata.icon} />
+      )
     : undefined;
 
   return {

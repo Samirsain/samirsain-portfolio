@@ -1,8 +1,8 @@
 import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 
 import { About } from "@/features/portfolio/components/about";
-import { Blog } from "@/features/portfolio/components/blog";
 import { Experiences } from "@/features/portfolio/components/experiences";
+import { FeaturedDisplay } from "@/features/portfolio/components/featured-display";
 import { GitHubContributions } from "@/features/portfolio/components/github-contributions";
 import { Overview } from "@/features/portfolio/components/overview";
 import { ProfileCover } from "@/features/portfolio/components/profile-cover";
@@ -43,13 +43,13 @@ export default function Page() {
         <TeckStack />
         <Separator />
 
+        <FeaturedDisplay />
+        <Separator />
+
         <Projects />
         <Separator />
 
         <Experiences />
-        <Separator />
-
-        <Blog />
         <Separator />
       </div>
     </>

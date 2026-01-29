@@ -34,28 +34,31 @@ function getPageJsonLd(): WithContext<BreadcrumbList> {
   };
 }
 
+import {
+  Panel,
+  PanelHeader,
+  PanelTitle,
+} from "@/features/portfolio/components/panel";
+
 export default function Page() {
   const allPosts = getAllPosts();
 
   return (
-    <div className="min-h-svh">
+    <Panel className="min-h-svh">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(getPageJsonLd()).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="screen-line-after px-4">
-        <h1 className="text-3xl font-semibold">Blog</h1>
-      </div>
-
-      <div className="p-4">
-        <p className="font-mono text-sm text-balance text-muted-foreground">
+      <PanelHeader>
+        <PanelTitle>Blog</PanelTitle>
+        <p className="mt-2 font-mono text-sm text-balance text-muted-foreground">
           {metadata.description}
         </p>
-      </div>
+      </PanelHeader>
 
-      <div className="screen-line-before screen-line-after p-2">
+      <div className="screen-line-after p-2">
         <Suspense
           fallback={
             <div className="flex h-9 w-full rounded-lg border border-input shadow-xs dark:bg-input/30" />
@@ -65,11 +68,13 @@ export default function Page() {
         </Suspense>
       </div>
 
-      <Suspense fallback={<PostList posts={allPosts} />}>
-        <PostListWithSearch posts={allPosts} />
-      </Suspense>
+      <div className="p-4">
+        <Suspense fallback={<PostList posts={allPosts} />}>
+          <PostListWithSearch posts={allPosts} />
+        </Suspense>
+      </div>
 
       <div className="h-4" />
-    </div>
+    </Panel>
   );
 }
