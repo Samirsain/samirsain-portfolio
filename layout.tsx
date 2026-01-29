@@ -107,7 +107,7 @@ function getStructuredData() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${SITE_INFO.url}#website`,
-    name: `${USER.displayName} | ${USER.jobTitle}`,
+    name: USER.displayName,
     alternateName: [USER.username, "Zenviq"],
     url: SITE_INFO.url,
     description: SITE_INFO.description,
