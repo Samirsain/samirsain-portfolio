@@ -1,0 +1,21 @@
+{
+    "name": "Samir Sain - Full Stack Developer",
+    "short_name": "SamirSain",
+    "description": "Full Stack Developer & SaaS Architect building high-performance web apps and AI-powered digital products.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "type": "image/svg+xml",
+            "sizes": "any"
+        },
+        {
+            "src": "/favicon.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon"
+        }
+    ]
+}
