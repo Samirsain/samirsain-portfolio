@@ -32,7 +32,7 @@ export function Contact() {
                     <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
                         <div className="lg:w-1/2">
                             <span className="mono-label mb-4 block">Communication</span>
-                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-dense mb-8">
+                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-dense mb-8">
                                 Initialize <span className="text-muted-foreground">Contact</span>
                             </h2>
                             <p className="text-muted-foreground text-lg leading-relaxed mb-12">

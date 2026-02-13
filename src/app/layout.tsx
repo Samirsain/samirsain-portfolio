@@ -31,6 +31,21 @@ export const metadata: Metadata = {
     template: "%s | Samir Sain"
   },
   description: "Senior Full Stack Developer & SaaS Architect crafting high-performance web apps, scalable systems, and AI-powered solutions with technical excellence.",
+  keywords: [
+    "Samir Sain",
+    "Full Stack Developer",
+    "SaaS Architect",
+    "Web Development",
+    "Digital Marketing",
+    "SEO Optimization",
+    "AI Automation",
+    "Meta Ads",
+    "Google Ads",
+    "WordPress Developer",
+    "Shopify Developer",
+    "Next.js Expert",
+    "Freelance Developer India"
+  ],
   authors: [{ name: "Samir Sain" }],
   creator: "Samir Sain",
   metadataBase: new URL("https://samirsain.com"),
@@ -49,6 +64,7 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+    "max-image-preview": "large",
   },
   openGraph: {
     title: "Samir Sain | Senior Full Stack Developer & SaaS Architect",

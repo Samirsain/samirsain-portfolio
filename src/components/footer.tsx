@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
@@ -10,16 +11,30 @@ import { Input } from "@/components/ui/input";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const toggleVisibility = () => {
+            if (window.pageYOffset > 300) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        };
+
+        window.addEventListener("scroll", toggleVisibility);
+        return () => window.removeEventListener("scroll", toggleVisibility);
+    }, []);
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     return (
-        <footer className="py-20 bg-background border-t border-border/50 relative overflow-hidden">
+        <footer className="py-8 bg-background border-t border-border/50 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
-                    <div className="lg:col-span-4">
+                <div className="grid grid-cols-1 lg:grid-cols-11 gap-8 mb-8">
+                    <div className="lg:col-span-3">
                         <div className="flex items-center gap-3 mb-6">
                             <Logo className="h-7 w-auto text-primary" />
                             <span className="font-bold text-lg tracking-tight uppercase font-mono">
@@ -49,12 +64,40 @@ export function Footer() {
                     </div>
 
                     <div className="lg:col-span-2">
-                        <p className="mono-label mb-6">Navigation</p>
+                        <p className="mono-label mb-4">Quick Links</p>
                         <ul className="space-y-4">
-                            {["About", "Skills", "Services", "Projects", "Blog"].map((item) => (
+                            {[
+                                { name: "Home", href: "/" },
+                                { name: "About", href: "/#about" },
+                                { name: "Skills", href: "/#skills" },
+                                { name: "Services", href: "/services" },
+                                { name: "Contact", href: "/#contact" }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link
+                                        href={item.href}
+                                        className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium"
+                                    >
+                                        {item.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div className="lg:col-span-3">
+                        <p className="mono-label mb-4">Services</p>
+                        <ul className="space-y-4">
+                            {[
+                                "Web Development",
+                                "SEO Optimization",
+                                "Digital Marketing",
+                                "PPC Advertising",
+                                "Email Marketing"
+                            ].map((item) => (
                                 <li key={item}>
                                     <Link
-                                        href={`/#${item.toLowerCase()}`}
+                                        href={`/services/${item.toLowerCase().replace(/ /g, '-')}`}
                                         className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium"
                                     >
                                         {item}
@@ -65,7 +108,7 @@ export function Footer() {
                     </div>
 
                     <div className="lg:col-span-3">
-                        <p className="mono-label mb-6">Stay updated</p>
+                        <p className="mono-label mb-4">Stay updated</p>
                         <p className="text-sm text-muted-foreground mb-4">
                             Get the latest news and updates.
                         </p>
@@ -80,19 +123,10 @@ export function Footer() {
                         </div>
                     </div>
 
-                    <div className="lg:col-span-3">
-                        <div className="flex justify-end h-full items-end pb-2">
-                            <button
-                                onClick={scrollToTop}
-                                className="w-12 h-12 rounded-full glass border border-border/50 flex items-center justify-center hover:bg-primary hover:text-background transition-all"
-                            >
-                                <ArrowUpIcon className="w-5 h-5" />
-                            </button>
-                        </div>
-                    </div>
+
                 </div>
 
-                <div className="pt-12 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="pt-4 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-[10px] text-muted-foreground/60 uppercase tracking-widest font-mono">
                         &copy; {currentYear} SAMIRSAIN.DEV // ALL RIGHTS RESERVED
                     </p>
@@ -102,6 +136,23 @@ export function Footer() {
                     </div>
                 </div>
             </div>
+
+            {/* Floating Back to Top Button */}
+            <AnimatePresence>
+                {isVisible && (
+                    <motion.button
+                        initial={{ opacity: 0, scale: 0.5, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.5, y: 20 }}
+                        onClick={scrollToTop}
+                        className="fixed bottom-8 right-8 w-12 h-12 rounded-full glass border border-border/50 flex items-center justify-center hover:bg-primary hover:text-background transition-all z-[100] shadow-2xl"
+                        whileHover={{ y: -5 }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        <ArrowUpIcon className="w-5 h-5" />
+                    </motion.button>
+                )}
+            </AnimatePresence>
         </footer>
     );
 }

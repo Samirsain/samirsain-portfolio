@@ -24,7 +24,7 @@ export function About() {
                             <span className="mono-label !text-primary transform translate-y-[0.5px]">About Me</span>
                         </div>
 
-                        <h2 className="text-5xl md:text-6xl font-bold tracking-tighter text-dense mb-6 text-gradient leading-[1.1]">
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-dense mb-6 text-gradient leading-[1.1]">
                             Crafting Digital<br />
                             <span className="text-muted-foreground/40 italic">Excellence</span>
                         </h2>

@@ -109,7 +109,7 @@ export function Projects() {
                                 Featured Case Studies
                             </span>
                         </motion.div>
-                        <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-dense text-gradient mb-6 leading-none">
+                        <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-dense text-gradient mb-6 leading-none">
                             High Impact <br />
                             <span className="text-muted-foreground/40 italic">
                                 Deployments
@@ -191,20 +191,24 @@ export function Projects() {
                                                 </div>
                                             </div>
 
-                                            {/* Hover Actions */}
-                                            <div className="absolute bottom-6 right-6 z-20 flex gap-3 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                                                <Button
-                                                    size="icon"
-                                                    className="rounded-full w-10 h-10 glass border border-white/20"
-                                                >
-                                                    <Github className="w-4 h-4" />
-                                                </Button>
-                                                <Button
-                                                    size="icon"
-                                                    className="rounded-full w-10 h-10 glass border border-white/20"
-                                                >
-                                                    <ArrowTopRightOnSquareIcon className="w-4 h-4" />
-                                                </Button>
+                                            {/* Hover/Always-on-Mobile Actions */}
+                                            <div className="absolute bottom-6 right-6 z-20 flex gap-3 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0 transition-all duration-500">
+                                                <Link href="https://github.com/Samirsain" target="_blank">
+                                                    <Button
+                                                        size="icon"
+                                                        className="rounded-full w-10 h-10 glass border border-white/20 hover:scale-110 transition-transform"
+                                                    >
+                                                        <Github className="w-4 h-4" />
+                                                    </Button>
+                                                </Link>
+                                                <Link href={project.link} target="_blank">
+                                                    <Button
+                                                        size="icon"
+                                                        className="rounded-full w-10 h-10 glass border border-white/20 hover:scale-110 transition-transform"
+                                                    >
+                                                        <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+                                                    </Button>
+                                                </Link>
                                             </div>
                                         </div>
                                     </motion.div>
@@ -241,9 +245,19 @@ export function Projects() {
                                         <h3 className="text-4xl md:text-5xl font-black tracking-tighter mb-4 text-gradient">
                                             {project.title}
                                         </h3>
-                                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                                        <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                                             {project.desc}
                                         </p>
+
+                                        {/* Mobile-Friendly Launch Button */}
+                                        <div className="flex mb-8 lg:hidden">
+                                            <Link href={project.link} target="_blank" className="w-full">
+                                                <Button className="w-full h-12 rounded-full font-bold uppercase tracking-widest text-[10px] gap-2 shadow-xl shadow-primary/20">
+                                                    Launch Project
+                                                    <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+                                                </Button>
+                                            </Link>
+                                        </div>
 
                                         {/* Tags */}
                                         <div className="flex flex-wrap gap-2 mb-10">

@@ -62,7 +62,7 @@ export function Skills() {
                         <CommandLineIcon className="w-3 h-3 text-primary" />
                         <span className="mono-label !text-primary">Technical Stack</span>
                     </motion.div>
-                    <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-dense text-gradient mb-6">
+                    <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-dense text-gradient mb-6">
                         The Stack <br />
                         <span className="text-muted-foreground/40 italic">I Master</span>
                     </h2>
@@ -80,7 +80,7 @@ export function Skills() {
                             key={category.title}
                             variants={itemVariants}
                             whileHover={{ y: -5 }}
-                            className="glass-card p-10 rounded-[3rem] border-border/50 group"
+                            className="glass-card p-6 md:p-10 rounded-[3rem] border-border/50 group"
                         >
                             <div className={cn("w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-all group-hover:scale-110", category.bg)}>
                                 <category.icon className={cn("w-7 h-7", category.text)} />

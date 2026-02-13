@@ -74,7 +74,7 @@ export function Hero() {
 
                         <motion.h1
                             variants={itemVariants}
-                            className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 text-dense text-gradient"
+                            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 text-dense text-gradient"
                         >
                             Engineering <br />
                             <span className="text-muted-foreground/40 italic">Modern</span> Solutions

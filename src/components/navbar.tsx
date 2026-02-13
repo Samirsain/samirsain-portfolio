@@ -18,7 +18,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 const navItems = [
     { name: "About", href: "/#about" },
     { name: "Skills", href: "/#skills" },
-    { name: "Services", href: "/#services" },
+    { name: "Services", href: "/services" },
     { name: "Projects", href: "/#projects" },
     { name: "Experience", href: "/#experience" },
     { name: "Blog", href: "/#blog" },
@@ -27,6 +27,7 @@ const navItems = [
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -80,23 +81,23 @@ export function Navbar() {
                     ))}
                 </nav>
 
-                <div className="flex items-center gap-3">
-                    <div className="hidden sm:flex items-center gap-1 mr-2 text-muted-foreground">
-                        <Link href="https://github.com" target="_blank">
+                <div className="flex items-center gap-2">
+                    <div className="hidden sm:flex items-center gap-1 text-muted-foreground mr-1">
+                        <Link href="https://github.com/Samirsain" target="_blank">
                             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                                 <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
                                     <Github className="w-4 h-4" />
                                 </Button>
                             </motion.div>
                         </Link>
-                        <ModeToggle />
                     </div>
 
+                    <ModeToggle />
 
-                    <Link href="/#contact">
+                    <Link href="/#contact" className="hidden sm:block">
                         <Button
                             size="sm"
-                            className="h-9 rounded-full px-6 text-[10px] font-bold uppercase tracking-widest bg-primary text-background hover:opacity-90 transition-all shadow-lg hover:shadow-primary/20"
+                            className="h-9 rounded-full px-5 text-[10px] font-bold uppercase tracking-widest bg-primary text-background hover:opacity-90 transition-all shadow-lg hover:shadow-primary/20"
                         >
                             Connect
                         </Button>
@@ -104,7 +105,7 @@ export function Navbar() {
 
                     {/* Mobile Menu Trigger */}
                     <div className="lg:hidden">
-                        <Sheet>
+                        <Sheet open={isOpen} onOpenChange={setIsOpen}>
                             <SheetTrigger asChild>
                                 <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full glass border-border/20">
                                     <Bars3Icon className="w-5 h-5" />
@@ -120,7 +121,6 @@ export function Navbar() {
                                                 SAMIR<span className="text-muted-foreground font-light"> SAIN</span>
                                             </span>
                                         </div>
-                                        <ModeToggle />
                                     </div>
 
                                     {/* Nav Items */}
@@ -131,6 +131,7 @@ export function Navbar() {
                                                 <Link
                                                     key={item.name}
                                                     href={item.href}
+                                                    onClick={() => setIsOpen(false)}
                                                     className="group flex items-center justify-between py-4 border-b border-border/15 hover:border-primary/30 transition-all"
                                                 >
                                                     <div className="flex items-center gap-4">
@@ -151,15 +152,18 @@ export function Navbar() {
 
                                     {/* Footer */}
                                     <div className="px-8 pb-8 space-y-6">
-                                        <div className="flex items-center gap-3">
-                                            <Link href="https://github.com/Samirsain" target="_blank" className="w-11 h-11 rounded-full border border-border/40 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all">
-                                                <Github className="w-4 h-4" />
-                                            </Link>
-                                            <Link href="https://in.linkedin.com/in/samirsain" target="_blank" className="w-11 h-11 rounded-full border border-border/40 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all">
-                                                <Linkedin className="w-4 h-4" />
-                                            </Link>
+                                        <div className="flex items-center gap-3 justify-between">
+                                            <div className="flex items-center gap-3">
+                                                <Link href="https://github.com/Samirsain" target="_blank" className="w-11 h-11 rounded-full border border-border/40 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all">
+                                                    <Github className="w-4 h-4" />
+                                                </Link>
+                                                <Link href="https://in.linkedin.com/in/samirsain" target="_blank" className="w-11 h-11 rounded-full border border-border/40 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all">
+                                                    <Linkedin className="w-4 h-4" />
+                                                </Link>
+                                            </div>
+                                            <ModeToggle />
                                         </div>
-                                        <Link href="/#contact">
+                                        <Link href="/#contact" onClick={() => setIsOpen(false)}>
                                             <Button className="w-full h-12 rounded-full bg-primary text-background font-bold uppercase tracking-[0.2em] text-[11px] hover:opacity-90 transition-all shadow-lg hover:shadow-primary/20">
                                                 Let&apos;s Connect
                                             </Button>

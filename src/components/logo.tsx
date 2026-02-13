@@ -3,6 +3,8 @@ import { cn } from "@/lib/utils";
 export function Logo({ className }: { className?: string }) {
     return (
         <svg
+            width="400"
+            height="366"
             viewBox="0 0 400 366"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
