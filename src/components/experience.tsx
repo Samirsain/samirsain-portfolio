@@ -38,8 +38,8 @@ export function Experience() {
     return (
         <section id="experience" className="py-20 border-b border-border bg-background">
             <div className="container max-w-4xl mx-auto px-4 md:px-6">
-                <div className="flex flex-col md:flex-row items-baseline gap-12 mb-20">
-                    <div className="md:w-1/3">
+                <div className="flex flex-col md:flex-row items-center md:items-baseline gap-12 mb-20 text-center md:text-left">
+                    <div className="md:w-1/3 flex flex-col items-center md:items-start">
                         <span className="mono-label mb-4 block">Sequence of Events</span>
                         <h2 className="text-4xl font-bold tracking-tight text-dense">
                             Professional <br />

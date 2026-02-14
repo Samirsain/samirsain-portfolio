@@ -96,8 +96,8 @@ export function Projects() {
         <section id="projects" className="relative bg-background">
             {/* Section Header */}
             <div className="container max-w-4xl mx-auto px-4 md:px-6 pt-16 pb-12">
-                <div className="flex flex-col md:flex-row justify-between items-end gap-8">
-                    <div className="max-w-2xl">
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 text-center md:text-left">
+                    <div className="max-w-2xl flex flex-col items-center md:items-start">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}

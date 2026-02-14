@@ -16,8 +16,8 @@ export function Blog() {
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
             <div className="container max-w-4xl mx-auto px-4 md:px-6 relative z-10">
-                <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-16">
-                    <div className="max-w-xl">
+                <div className="flex flex-col md:flex-row items-center md:items-end justify-between gap-8 mb-16 text-center md:text-left">
+                    <div className="max-w-xl flex flex-col items-center md:items-start">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}

@@ -3,16 +3,19 @@ import { Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollProgress } from "@/components/scroll-progress";
+import Script from "next/script";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   variable: "--font-instrument-serif",
   weight: "400",
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -149,6 +152,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body
         className={`${geistMono.variable} ${instrumentSerif.variable} font-sans antialiased bg-background text-foreground`}
       >
@@ -159,8 +166,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <script
+          <Script
+            id="json-ld"
             type="application/ld+json"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
           <div className="relative min-h-screen flex flex-col">
